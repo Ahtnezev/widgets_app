@@ -1,5 +1,6 @@
 
-import 'package:flutter/material.dart' show IconData, Icons;
+// import 'package:flutter/material.dart' show IconData, Icons;
+import 'package:flutter/material.dart';
 
 class MenuItem {
   final String title;  
@@ -7,9 +8,15 @@ class MenuItem {
   final String link;  
   final IconData icon;
 
-  const MenuItem({required this.title, required this.subTitle, required this.link, required this.icon});  
+  const MenuItem({
+    required this.title, 
+    required this.subTitle, 
+    required this.link, 
+    required this.icon
+  });
+}
 
-  static const appMenuItems = <MenuItem>[
+const appMenuItems = <MenuItem>[
     MenuItem(
       title: 'Botones',
       subTitle: 'Varios botones en Flutter',
@@ -24,5 +31,3 @@ class MenuItem {
       icon: Icons.credit_card
     ),
   ];
-
-}
