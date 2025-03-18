@@ -18,7 +18,7 @@ class MainApp extends StatelessWidget {
       title: 'Flutter Widgets', // show in showAboutDialog(...) -> Snackbarscreen
       routerConfig: appRouter,
       debugShowCheckedModeBanner: false,
-      theme: AppTheme(selectedColor: 2).getTheme(),
+      theme: AppTheme(selectedColor: 5).getTheme(),
 
       // home: const HomeScreen(),
       // routes: {
