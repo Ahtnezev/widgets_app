@@ -1,0 +1,1 @@
+C:\Users\Vizen\SdkDart\flutter\packages\flutter_tools\gradle\src\main\groovy\CMakeLists.txt

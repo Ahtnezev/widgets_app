@@ -1,3 +1,5 @@
 {
-    "workbench.colorTheme": "Deep Dark"
+    "workbench.colorTheme": "One Dark Space Gray",
+    "workbench.iconTheme": "charmed-icons",
+    "editor.fontWeight": "450",
 }
