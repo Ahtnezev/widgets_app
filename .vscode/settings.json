@@ -1,5 +1,6 @@
 {
-    "workbench.colorTheme": "One Dark Space Gray",
-    "workbench.iconTheme": "charmed-icons",
+    "workbench.colorTheme": "Hyper Dark Material",
+    "workbench.iconTheme": "theme",
     "editor.fontWeight": "450",
+    "editor.lineHeight": 2,
 }
