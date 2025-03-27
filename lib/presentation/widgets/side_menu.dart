@@ -33,11 +33,8 @@ class _SideMenuState extends State<SideMenu> {
         context.push(menuItem.link);
         //* para poder hacer referencia de la variable que esta fuera de nuestro widget 
         widget.scaffoldKey.currentState?.closeDrawer();
-        
-
       },
       children: [
-
         Padding(
           padding: EdgeInsets.fromLTRB(28, hasNotch ? 0 : 20, 16, 10),
           child: const Text('Main')
