@@ -26,6 +26,13 @@ const appMenuItems = <MenuItem>[
     ),
 
     MenuItem(
+      title: 'Cambiar tema',
+      subTitle: 'Cambiar tema de aplicación',
+      link: '/theme-changer',
+      icon: Icons.color_lens_outlined
+    ),
+
+    MenuItem(
       title: 'Botones',
       subTitle: 'Varios botones en Flutter',
       link: '/buttons',
