@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:widgets_app/config/theme/app_theme.dart';
 import 'package:widgets_app/presentation/providers/theme_provider.dart';
 
 class ThemeChangerScreen extends ConsumerWidget {
@@ -40,7 +41,9 @@ class _ThemeChangerView extends ConsumerWidget {
   Widget build(BuildContext context, WidgetRef ref) {
 
     final List<Color> colors = ref.watch(colorListProvider);
-    final int selectedIndexColor = ref.watch(selectedColorProvider);
+    // final int selectedIndexColor = ref.watch(selectedColorProvider);
+    final AppTheme appTheme = ref.watch(themeNotifierProvider);
+    final selectedColor = appTheme.selectedColor;
 
     return ListView.builder(
       itemCount: colors.length,
@@ -53,10 +56,11 @@ class _ThemeChangerView extends ConsumerWidget {
           subtitle: Text('${color.value}'),
           activeColor: color, // color del radio seleccionado
           value: index,
-          groupValue: selectedIndexColor,
+          groupValue: selectedColor,
           onChanged: (value) {
-            // todo: notificar el cambio
-            ref.read(selectedColorProvider.notifier).state = index;
+            // #1
+            // ref.read(selectedColorProvider.notifier).state = index;
+              ref.read( themeNotifierProvider.notifier ).changeColorIndex(index);
           },
         );
       },
