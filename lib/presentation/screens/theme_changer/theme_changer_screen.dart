@@ -9,7 +9,9 @@ class ThemeChangerScreen extends ConsumerWidget {
   @override
   Widget build(BuildContext context, WidgetRef ref) {
 
-    final bool isDarkMode = ref.watch(isDarkmodeProvider);
+    // #1
+    // final bool isDarkMode = ref.watch(isDarkmodeProvider);
+    final isDarkMode = ref.watch(themeNotifierProvider).isDarkmode;
 
     return Scaffold(
       appBar: AppBar(
@@ -18,7 +20,10 @@ class ThemeChangerScreen extends ConsumerWidget {
           IconButton(
             icon: Icon( isDarkMode ? Icons.dark_mode_outlined : Icons.light_mode_outlined),
             onPressed: () {
-              ref.read(isDarkmodeProvider.notifier).update((state) => !state);
+              // ref.read(isDarkmodeProvider.notifier).update((state) => !state);
+              // cuando no hacemos uso de riverpod, es porque lo crea automaticamente y cuando hacemos uso
+              // es porque nosotros debemos encargarnos
+              ref.read( themeNotifierProvider.notifier ).toggleDarkMode();
             },
           )
         ],

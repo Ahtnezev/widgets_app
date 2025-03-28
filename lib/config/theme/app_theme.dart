@@ -16,21 +16,29 @@ const colorList = <Color>[
 class AppTheme {
 
   final int selectedColor;
-  final bool isDarkMode;
+  final bool isDarkmode;
 
   AppTheme({
     this.selectedColor = 0,
-    this.isDarkMode = false
+    this.isDarkmode = true
   }) : assert( selectedColor >= 0, 'selected color must be greater than 0' ),
        assert( selectedColor < colorList.length, 'selected color must be less or equal than ${colorList.length - 1}' );
 
   ThemeData getTheme() => ThemeData(
     useMaterial3: true,
-    brightness: isDarkMode ? Brightness.dark : Brightness.light,
+    brightness: isDarkmode ? Brightness.dark : Brightness.light,
     colorSchemeSeed: colorList[ selectedColor ],
     appBarTheme: const AppBarTheme(
       centerTitle: false
     )
   );
 
+  //🔥 esto se hace con la finalidad de no remover el `final`
+  AppTheme copyWith({
+    int? selectedColor,
+    bool? isDarkmode
+  }) => AppTheme(
+    selectedColor: selectedColor ?? this.selectedColor,
+    isDarkmode: isDarkmode ?? this.isDarkmode,
+  );
 } 
